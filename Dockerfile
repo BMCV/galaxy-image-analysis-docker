@@ -1,8 +1,8 @@
 # Galaxy Image Analysis Docker Image
 
-FROM bgruening/galaxy:24.2
+FROM quay.io/bgruening/galaxy:24.2-beta
 
-MAINTAINER Leonid Kostrykin, leonid.kostrykin@bioquant.uni-heidelberg.de
+LABEL org.opencontainers.image.authors="leonid.kostrykin@bioquant.uni-heidelberg.de"
 
 ENV GALAXY_CONFIG_BRAND="Galaxy Imaging" \
     ENABLE_TTS_INSTALL=True
