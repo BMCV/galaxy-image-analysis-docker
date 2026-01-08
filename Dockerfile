@@ -7,9 +7,10 @@ ENV GALAXY_CONFIG_BRAND="Galaxy Image Analysis"
 
 # Install GIA tools
 WORKDIR /galaxy
-RUN add-tool-shed --url 'http://testtoolshed.g2.bx.psu.edu/' --name 'Test Tool Shed'
+ADD start-galaxy.bash $GALAXY_ROOT_DIR/start-galaxy.bash
 ADD tools.yml $GALAXY_ROOT_DIR/tools.yml
-RUN install-tools $GALAXY_ROOT_DIR/tools.yml
+RUN add-tool-shed --url 'http://testtoolshed.g2.bx.psu.edu/' --name 'Test Tool Shed'
+RUN bash $GALAXY_ROOT_DIR/start-galaxy.bash && install-tools $GALAXY_ROOT_DIR/tools.yml
 
 # Mark folders as imported from the host.
 VOLUME ["/export/", "/data/", "/var/lib/docker"]
