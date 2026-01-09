@@ -1,5 +1,7 @@
 # Docker Image for Galaxy Image Analysis
 
+Galaxy Image Analysis: https://github.com/BMCV/galaxy-image-analysis
+
 Building the image:
 ```bash
 docker build -t galaxy-image-analysis .
