@@ -84,6 +84,7 @@ def build_tools_dict(repo_url: str, verbose: bool = False) -> dict:
     tools.sort(key=lambda tool: tool['name'])
     return dict(
         tools=tools,
+        install_resolver_dependencies=False,
 
         # Keep the image small, don't install Conda dependencies, run the container with
         # `--priviledged` to employ Singularity constainers instead:
