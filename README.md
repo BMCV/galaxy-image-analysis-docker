@@ -2,7 +2,7 @@
 
 Building the image:
 ```bash
-docker build -t galaxy-image-analysis
+docker build -t galaxy-image-analysis .
 ```
 
 Running the container:
