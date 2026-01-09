@@ -1,0 +1,70 @@
+sections:
+
+- name: Image processing
+  tools:
+  - anisotropic_diffusion
+  - morphological_operations
+  - ridge_filter
+  - 2d_simple_filter
+  - clip_image
+  - crop_image
+  - 2d_histogram_equalization
+  - image_math
+  - background_removal
+  - scale_image
+  - image_info
+
+- name: Image conversion
+  tools:
+  - concat_channels
+  - binary2labelimage
+  - binaryimage2points
+  - coordinates_of_roi
+  - points2labelimage
+  - suite_highdicom
+  - bfconvert
+  - label_to_binary
+  - labelimage2points
+  - repeat_channels
+  - bioformats2raw
+  - color_deconvolution
+  - permutate_axis
+  - slice_image
+  - split_image
+  - imagecoordinates_flipaxis
+
+- name: Segmentation, partitioning, and detection
+  tools:
+  - voronoi_tesselation
+  - count_objects
+  - 2d_feature_extraction
+  - 2d_filter_segmentation_by_features
+  - mergeneighboursinlabelimage
+  - spot_detection_2d
+  - plantseg
+  - rfove
+  - superdsm
+  - split_labelmap
+  - 2d_auto_threshold
+
+- name: Registration
+  tools:
+  - orientationpy
+  - image_registration_affine
+  - landmark_registration
+  - projective_transformation_points
+  - projective_transformation
+
+- name: Tracking
+  tools:
+  - points_association_nn
+
+- name: Visualization and validation
+  tools:
+  - colorize_labels
+  - segmetrics
+  - visceral_evaluatesegmentation
+  - overlay_images
+  - suite_libcarna
+  - detection_viz
+  - suite_iscc

@@ -19,7 +19,7 @@ def list_tool_repositories(repo_url: str):
             if re.match(r'^.*\.ya?ml$', str(shed_yml_path).lower()):
                 with shed_yml_path.open('r') as fp:
                     shed = yaml.safe_load(fp)
-                repo_name = shed.get('name')
+                repo_name = shed.get('suite', dict()).get('name') or shed.get('name')
                 repo_owner = shed.get('owner')
                 if repo_name and repo_owner:
                     yield repo_name, repo_owner
@@ -33,8 +33,35 @@ def list_revisions(repo_name: str, repo_owner: str) -> list[str]:
         return list()
 
 
+class SectionIndex:
+
+    def __init__(self, default='Miscellaneous'):
+        with open('sections.yml', 'r') as fp:
+            sections = yaml.safe_load(fp)['sections']
+        self._default = default
+        self._data = dict()
+        self._used = set()
+        for section in sections:
+            for tool in section.get('tools', list()):
+                if tool in self._data:
+                    raise ValueError(f'Tool "{tool}" defined in multple sections.')
+                self._data[tool] = section
+
+    def __getitem__(self, repo_name: str) -> str:
+        if repo_name in self._data:
+            self._used.add(repo_name)
+            return self._data[repo_name]['name']
+        else:
+            return self._default
+
+    @property
+    def unused(self) -> list[str]:
+        return list(sorted(frozenset(self._data.keys()) - self._used))
+
+
 def build_tools_dict(repo_url: str, verbose: bool = False) -> dict:
     tools = list()
+    sections = SectionIndex()
     for repo_name, repo_owner in list_tool_repositories(repo_url):
         tool_revisions = list_revisions(repo_name, repo_owner)
         if len(tool_revisions) > 0:
@@ -43,11 +70,17 @@ def build_tools_dict(repo_url: str, verbose: bool = False) -> dict:
                     name=repo_name,
                     owner=repo_owner,
                     revisions=[tool_revisions[-1]],
-                    tool_panel_section_label='GIA',
+                    tool_panel_section_label=sections[repo_name],
                 ),
             )
             if verbose:
                 print(f'{tools[-1]["owner"]}/{tools[-1]["name"]}: {tools[-1]["revisions"]}')
+    if sections.unused:
+        print(
+            'Tools defined in sections but not found:\n',
+            '\n'.join(f'- {tool}' for tool in sections.unused),
+            file=sys.stderr,
+        )
     tools.sort(key=lambda tool: tool['name'])
     return dict(
         tools=tools,
