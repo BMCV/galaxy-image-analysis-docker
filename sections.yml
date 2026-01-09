@@ -1,6 +1,6 @@
 sections:
 
-- name: Image processing
+- name: Image Processing
   tools:
   - anisotropic_diffusion
   - morphological_operations
@@ -14,7 +14,7 @@ sections:
   - scale_image
   - image_info
 
-- name: Image conversion
+- name: Image Conversion
   tools:
   - concat_channels
   - binary2labelimage
@@ -33,7 +33,7 @@ sections:
   - split_image
   - imagecoordinates_flipaxis
 
-- name: Segmentation, partitioning, and detection
+- name: Image Segmentation, Partitioning, and Object Detection
   tools:
   - voronoi_tesselation
   - count_objects
@@ -47,7 +47,7 @@ sections:
   - split_labelmap
   - 2d_auto_threshold
 
-- name: Registration
+- name: Image Registration
   tools:
   - orientationpy
   - image_registration_affine
@@ -55,11 +55,11 @@ sections:
   - projective_transformation_points
   - projective_transformation
 
-- name: Tracking
+- name: Object Tracking
   tools:
   - points_association_nn
 
-- name: Visualization and validation
+- name: Visualization and Validation
   tools:
   - colorize_labels
   - segmetrics
