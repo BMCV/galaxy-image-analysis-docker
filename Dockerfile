@@ -19,4 +19,4 @@ EXPOSE :80
 EXPOSE :21
 
 # Autostart script that is invoked during container start
-CMD ["/usr/bin/startup"]
+CMD ["/usr/bin/startup2"]
