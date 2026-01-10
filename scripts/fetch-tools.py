@@ -26,9 +26,18 @@ def list_tool_repositories(repo_url: str):
                         suite_repo = ts.repositories.get_repositories(repo_name, repo_owner)[0]
                         print('-' * 50)
                         print(repo_name, repo_owner)
-                        print(suite_repo)
+                        install_info = ts.repositories.get_repository_revision_install_info(
+                            repo_name,
+                            repo_owner,
+                            list_revisions(repo_name, repo_owner)[-1],
+                        )
+                        repo_names = [
+                            dep["name"]
+                            for dep in install_info.get("repository_dependencies", {}).values()
+                        ]
+                        print(repo_names)
                         print('-' * 50)
-                        for repo in suite_repo.get("repository_dependencies", {}).values():
+                        for repo in suite_repo.get('repository_dependencies', {}).values():
                             yield repo['name'], repo_owner
                     else:
                         yield repo_name, repo_owner
