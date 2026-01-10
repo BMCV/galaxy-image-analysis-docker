@@ -12,7 +12,6 @@ sections:
   - image_math
   - background_removal
   - scale_image
-  - image_info
 
 - name: Image Conversion
   tools:
@@ -21,7 +20,8 @@ sections:
   - binaryimage2points
   - coordinates_of_roi
   - points2labelimage
-  - suite_highdicom
+  - highdicom_dicom2tiff
+  - highdicom_dicom2text
   - bfconvert
   - label_to_binary
   - labelimage2points
@@ -65,6 +65,8 @@ sections:
   - segmetrics
   - visceral_evaluatesegmentation
   - overlay_images
-  - suite_libcarna
+  - libcarna_render
   - detection_viz
-  - suite_iscc
+  - iscc_sum_similarity
+  - iscc_sum_verify
+  - iscc_sum
