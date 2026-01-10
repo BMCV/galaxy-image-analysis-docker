@@ -12,6 +12,7 @@ env:
 
 permissions:
   actions: read
+  contents: read
 
 jobs:
   build:
