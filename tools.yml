@@ -101,11 +101,21 @@ tools:
   revisions:
   - 99433164b593
   tool_panel_section_label: Visualization and Validation
+- name: highdicom_dicom2text
+  owner: imgteam
+  revisions:
+  - 5da9fe99cf02
+  tool_panel_section_label: Image Conversion
+- name: highdicom_dicom2tiff
+  owner: imgteam
+  revisions:
+  - 5d840cf51a67
+  tool_panel_section_label: Image Conversion
 - name: image_info
   owner: imgteam
   revisions:
   - f8b4eada923c
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Miscellaneous
 - name: image_math
   owner: imgteam
   revisions:
@@ -121,6 +131,21 @@ tools:
   revisions:
   - 984b342d03a6
   tool_panel_section_label: Image Conversion
+- name: iscc_sum
+  owner: imgteam
+  revisions:
+  - 7d2c95a58897
+  tool_panel_section_label: Visualization and Validation
+- name: iscc_sum_similarity
+  owner: imgteam
+  revisions:
+  - a9659266d0fc
+  tool_panel_section_label: Visualization and Validation
+- name: iscc_sum_verify
+  owner: imgteam
+  revisions:
+  - fe0c92fe6f66
+  tool_panel_section_label: Visualization and Validation
 - name: label_to_binary
   owner: imgteam
   revisions:
@@ -136,6 +161,11 @@ tools:
   revisions:
   - a7a21b7ac7b4
   tool_panel_section_label: Image Registration
+- name: libcarna_render
+  owner: imgteam
+  revisions:
+  - e07bfdcb1d26
+  tool_panel_section_label: Visualization and Validation
 - name: mahotas_features
   owner: imgteam
   revisions:
@@ -236,21 +266,6 @@ tools:
   revisions:
   - e8c9e104e109
   tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
-- name: suite_highdicom
-  owner: imgteam
-  revisions:
-  - b760d57db4fa
-  tool_panel_section_label: Image Conversion
-- name: suite_iscc
-  owner: imgteam
-  revisions:
-  - 9a12748b2d8e
-  tool_panel_section_label: Visualization and Validation
-- name: suite_libcarna
-  owner: imgteam
-  revisions:
-  - 3fc0670d2ec0
-  tool_panel_section_label: Visualization and Validation
 - name: superdsm
   owner: imgteam
   revisions:
