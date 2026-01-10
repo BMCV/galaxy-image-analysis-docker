@@ -18,12 +18,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug
-        run: |
-          gh run download ${{ github.event.workflow_run.id }} --dir temp
-          ls -al temp
-        env:
-          GH_TOKEN: ${{ github.token }}
+#      - name: Debug
+#        run: |
+#          gh run download ${{ github.event.workflow_run.id }} --dir temp
+#          ls -al temp
+#        env:
+#          GH_TOKEN: ${{ github.token }}
 
       - name: Get tag artifact from Release workflow
         if: ${{ github.event_name == 'workflow_run' }}
