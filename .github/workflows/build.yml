@@ -19,20 +19,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug 1
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ steps.check.outputs.tag }}
+#      - name: Debug 1
+#        uses: actions/checkout@v4
+#        with:
+#          ref: ${{ steps.check.outputs.tag }}
       - name: Debug 2
+        if: ${{ github.event_name == 'workflow_run' }}
         run: |
-          gh run download ${{ github.event.workflow_run.id }} --dir temp
-          ls -al temp
+          gh run download ${{ github.event.workflow_run.id }} --dir .
+          ls -al
         env:
           GH_TOKEN: ${{ github.token }}
 
       - name: Get tag artifact from Release workflow
         if: ${{ github.event_name == 'workflow_run' }}
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: tag-name
           path: .
