@@ -14,7 +14,7 @@ ts = bioblend.toolshed.ToolShedInstance(url='https://toolshed.g2.bx.psu.edu')
 def list_tool_repositories(repo_url: str):
     with tempfile.TemporaryDirectory() as tempdir_str:
         tempdir = pathlib.Path(tempdir_str)
-        repo = git.Repo.clone_from(repo_url, tempdir_str)
+        git.Repo.clone_from(repo_url, tempdir_str)
         for shed_yml_path in tempdir.glob('tools/**/.shed.y*ml', case_sensitive=False):
             if re.match(r'^.*\.ya?ml$', str(shed_yml_path).lower()):
                 with shed_yml_path.open('r') as fp:
@@ -22,7 +22,12 @@ def list_tool_repositories(repo_url: str):
                 repo_name = shed.get('suite', dict()).get('name') or shed.get('name')
                 repo_owner = shed.get('owner')
                 if repo_name and repo_owner:
-                    yield repo_name, repo_owner
+                    if repo_name.startswith('suite_'):
+                        suite_repo = ts.repositories.get_repository(repo_name, repo_owner)
+                        for repo in suite_repo.get("repository_dependencies", {}).values():
+                            yield repo['name'], repo_owner
+                    else:
+                        yield repo_name, repo_owner
 
 
 def list_revisions(repo_name: str, repo_owner: str) -> list[str]:
