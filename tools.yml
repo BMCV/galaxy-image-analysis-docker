@@ -5,92 +5,92 @@ tools:
   owner: imgteam
   revisions:
   - 2ee04d2ebdcf
-  tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
+  tool_panel_section_label: Segmentation, partitioning, and detection
 - name: 2d_feature_extraction
   owner: imgteam
   revisions:
   - 519fad2c552a
-  tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
+  tool_panel_section_label: Segmentation, partitioning, and detection
 - name: 2d_filter_segmentation_by_features
   owner: imgteam
   revisions:
   - 7876ee93bcaf
-  tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
+  tool_panel_section_label: Segmentation, partitioning, and detection
 - name: 2d_histogram_equalization
   owner: imgteam
   revisions:
   - b1c2c210813c
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Image processing
 - name: 2d_simple_filter
   owner: imgteam
   revisions:
   - 59e9798010ce
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Image processing
 - name: anisotropic_diffusion
   owner: imgteam
   revisions:
   - 6ad5de2c5b7c
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Image processing
 - name: background_removal
   owner: imgteam
   revisions:
   - 6e9e98a7be4e
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Image processing
 - name: bfconvert
   owner: imgteam
   revisions:
   - fcadded98e61
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: binary2labelimage
   owner: imgteam
   revisions:
   - 364e235bf378
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: binaryimage2points
   owner: imgteam
   revisions:
   - f38f42d55813
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: bioformats2raw
   owner: imgteam
   revisions:
   - d7e5cf35577d
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: clip_image
   owner: imgteam
   revisions:
   - 53be9a7f94a6
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Image processing
 - name: color_deconvolution
   owner: imgteam
   revisions:
   - 0cbdf78fee14
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: colorize_labels
   owner: imgteam
   revisions:
   - 5907be5a8d7c
-  tool_panel_section_label: Visualization and Validation
+  tool_panel_section_label: Visualization and validation
 - name: concat_channels
   owner: imgteam
   revisions:
   - 999c5941a6f0
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: coordinates_of_roi
   owner: imgteam
   revisions:
   - 00175f4a2bbb
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: count_objects
   owner: imgteam
   revisions:
   - b58447a2eed2
-  tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
+  tool_panel_section_label: Segmentation, partitioning, and detection
 - name: crop_image
   owner: imgteam
   revisions:
   - 2852af87036d
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Image processing
 - name: curve_fitting
   owner: imgteam
   revisions:
@@ -100,42 +100,42 @@ tools:
   owner: imgteam
   revisions:
   - 99433164b593
-  tool_panel_section_label: Visualization and Validation
+  tool_panel_section_label: Visualization and validation
 - name: image_info
   owner: imgteam
   revisions:
   - f8b4eada923c
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Image processing
 - name: image_math
   owner: imgteam
   revisions:
   - 48fa3ac55df2
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Image processing
 - name: image_registration_affine
   owner: imgteam
   revisions:
   - 5030651c2993
-  tool_panel_section_label: Image Registration
+  tool_panel_section_label: Registration
 - name: imagecoordinates_flipaxis
   owner: imgteam
   revisions:
   - 984b342d03a6
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: label_to_binary
   owner: imgteam
   revisions:
   - 5da15c3bafed
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: labelimage2points
   owner: imgteam
   revisions:
   - 3b7460735223
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: landmark_registration
   owner: imgteam
   revisions:
   - a7a21b7ac7b4
-  tool_panel_section_label: Image Registration
+  tool_panel_section_label: Registration
 - name: mahotas_features
   owner: imgteam
   revisions:
@@ -145,117 +145,117 @@ tools:
   owner: imgteam
   revisions:
   - 9cbddb13fb9e
-  tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
+  tool_panel_section_label: Segmentation, partitioning, and detection
 - name: morphological_operations
   owner: imgteam
   revisions:
   - 4e25befab102
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Image processing
 - name: orientationpy
   owner: imgteam
   revisions:
   - cc8fe984ec3e
-  tool_panel_section_label: Image Registration
+  tool_panel_section_label: Registration
 - name: overlay_images
   owner: imgteam
   revisions:
   - bc4cf90cfc3b
-  tool_panel_section_label: Visualization and Validation
+  tool_panel_section_label: Visualization and validation
 - name: permutate_axis
   owner: imgteam
   revisions:
   - 119863c974b3
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: plantseg
   owner: imgteam
   revisions:
   - e59c0e930b1f
-  tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
+  tool_panel_section_label: Segmentation, partitioning, and detection
 - name: points2labelimage
   owner: imgteam
   revisions:
   - 22bb32eae6a1
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: points_association_nn
   owner: imgteam
   revisions:
   - f3fad67af22c
-  tool_panel_section_label: Object Tracking
+  tool_panel_section_label: Tracking
 - name: projective_transformation
   owner: imgteam
   revisions:
   - 6a8ae8cd7167
-  tool_panel_section_label: Image Registration
+  tool_panel_section_label: Registration
 - name: projective_transformation_points
   owner: imgteam
   revisions:
   - 499ad4d9aa13
-  tool_panel_section_label: Image Registration
+  tool_panel_section_label: Registration
 - name: repeat_channels
   owner: imgteam
   revisions:
   - 7cdb50fee601
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: rfove
   owner: imgteam
   revisions:
   - 81b246085378
-  tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
+  tool_panel_section_label: Segmentation, partitioning, and detection
 - name: ridge_filter
   owner: imgteam
   revisions:
   - f37d2ad5f532
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Image processing
 - name: scale_image
   owner: imgteam
   revisions:
   - e85846f4a05f
-  tool_panel_section_label: Image Processing
+  tool_panel_section_label: Image processing
 - name: segmetrics
   owner: imgteam
   revisions:
   - 4512751bccca
-  tool_panel_section_label: Visualization and Validation
+  tool_panel_section_label: Visualization and validation
 - name: slice_image
   owner: imgteam
   revisions:
   - a72590196440
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: split_image
   owner: imgteam
   revisions:
   - 390943df8a35
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: split_labelmap
   owner: imgteam
   revisions:
   - 0e7be7c35f15
-  tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
+  tool_panel_section_label: Segmentation, partitioning, and detection
 - name: spot_detection_2d
   owner: imgteam
   revisions:
   - e8c9e104e109
-  tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
+  tool_panel_section_label: Segmentation, partitioning, and detection
 - name: suite_highdicom
   owner: imgteam
   revisions:
   - b760d57db4fa
-  tool_panel_section_label: Image Conversion
+  tool_panel_section_label: Image conversion
 - name: suite_iscc
   owner: imgteam
   revisions:
   - 9a12748b2d8e
-  tool_panel_section_label: Visualization and Validation
+  tool_panel_section_label: Visualization and validation
 - name: suite_libcarna
   owner: imgteam
   revisions:
   - 3fc0670d2ec0
-  tool_panel_section_label: Visualization and Validation
+  tool_panel_section_label: Visualization and validation
 - name: superdsm
   owner: imgteam
   revisions:
   - 30d88f083ae9
-  tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
+  tool_panel_section_label: Segmentation, partitioning, and detection
 - name: unzip
   owner: imgteam
   revisions:
@@ -265,12 +265,12 @@ tools:
   owner: imgteam
   revisions:
   - 4d042d197ac3
-  tool_panel_section_label: Visualization and Validation
+  tool_panel_section_label: Visualization and validation
 - name: voronoi_tesselation
   owner: imgteam
   revisions:
   - 1944b0fccdbd
-  tool_panel_section_label: Image Segmentation, Partitioning, and Object Detection
+  tool_panel_section_label: Segmentation, partitioning, and detection
 - name: wsi_extract_top_view
   owner: imgteam
   revisions:
