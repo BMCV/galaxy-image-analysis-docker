@@ -1,4 +1,4 @@
-[![Release](https://github.com/BMCV/galaxy-image-analysis-docker/actions/workflows/release.yml/badge.svg)](https://github.com/BMCV/galaxy-image-analysis-docker/actions/workflows/release.yml)
+[![Update](https://github.com/BMCV/galaxy-image-analysis-docker/actions/workflows/update.yml/badge.svg)](https://github.com/BMCV/galaxy-image-analysis-docker/actions/workflows/update.yml)
 [![Build](https://github.com/BMCV/galaxy-image-analysis-docker/actions/workflows/build.yml/badge.svg)](https://github.com/BMCV/galaxy-image-analysis-docker/actions/workflows/build.yml)
 
 # Docker Image for Galaxy Image Analysis
