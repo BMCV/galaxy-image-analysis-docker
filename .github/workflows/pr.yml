@@ -1,0 +1,33 @@
+name: Update (dry)
+
+on:
+  pull_request:
+    branches: ['main']
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install requirements
+        run: |
+          pip install -r requirements.txt
+
+      - name: Fetch tools
+        run: |
+          python scripts/fetch-tools.py tools.yml --verbose 2> stderr.txt
+          if [ -s "stderr.txt" ]; then
+            cat stderr.txt
+            exit 1
+          fi
+
+      - name: Test scripts/check-rebuild.py
+        run: |
+          python scripts/check-rebuild.py tools.yml
+
+      - name: Test scripts/get-tag.py
+        run: |
+          python scripts/get-tag.py
