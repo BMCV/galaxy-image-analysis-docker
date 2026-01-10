@@ -31,11 +31,12 @@ def list_tool_repositories(repo_url: str):
                             repo_owner,
                             list_revisions(repo_name, repo_owner)[-1],
                         )
-                        repo_names = [
-                            dep["name"]
-                            for dep in install_info.get("repository_dependencies", {}).values()
-                        ]
-                        print(repo_names)
+                        import pprint; pprint.pprint(install_info)
+                        #repo_names = [
+                        #    dep["name"]
+                        #    for dep in install_info.get("repository_dependencies", {}).values()
+                        #]
+                        #print(repo_names)
                         print('-' * 50)
                         for repo in suite_repo.get('repository_dependencies', {}).values():
                             yield repo['name'], repo_owner
