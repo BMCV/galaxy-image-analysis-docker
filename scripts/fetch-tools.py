@@ -12,6 +12,19 @@ ts = bioblend.toolshed.ToolShedInstance(url='https://toolshed.g2.bx.psu.edu')
 default_repo_url = 'https://github.com/BMCV/galaxy-image-analysis.git'
 
 
+def list_tool_suite_dependencies(repo_name, repo_owner):
+    install_info = ts.repositories.get_repository_revision_install_info(
+        repo_name,
+        repo_owner,
+        list_revisions(repo_name, repo_owner)[-1],
+    )
+    suite_structure = install_info[2][repo_name][5]
+    for repo_info in suite_structure[
+        suite_structure['root_key']
+    ]:
+        yield repo_info[1], repo_owner
+
+
 def list_tool_repositories(repo_url: str):
     with tempfile.TemporaryDirectory() as tempdir_str:
         tempdir = pathlib.Path(tempdir_str)
@@ -30,20 +43,10 @@ def list_tool_repositories(repo_url: str):
                 repo_owner = shed.get('owner')
                 if repo_name and repo_owner:
                     if repo_name.startswith('suite_'):
-                        install_info = (
-                            ts
-                            .repositories
-                            .get_repository_revision_install_info
-                        )(
+                        yield from list_tool_suite_dependencies(
                             repo_name,
                             repo_owner,
-                            list_revisions(repo_name, repo_owner)[-1],
                         )
-                        suite_structure = install_info[2][repo_name][5]
-                        for repo_info in suite_structure[
-                            suite_structure['root_key']
-                        ]:
-                            yield repo_info[1], repo_owner
                     else:
                         yield repo_name, repo_owner
 
