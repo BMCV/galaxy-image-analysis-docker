@@ -85,8 +85,10 @@ def build_tools_dict(repo_url: str, verbose: bool = False) -> dict:
                 )
     if sections.unused:
         print(
-            'Tools defined in sections but not found:\n',
-            '\n'.join(f'- {tool}' for tool in sections.unused),
+            (
+                'Tools defined in sections but not found:\n'
+                '\n'.join(f'- {tool}' for tool in sections.unused)
+            ),
             file=sys.stderr,
         )
     tools.sort(key=lambda tool: tool['name'])
