@@ -1,0 +1,19 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint workflow files
+        uses: docker://ghcr.io/rhysd/actionlint/actionlint:v1
+        with:
+          args: ".github/workflows/*.yml .github/workflows/*.yaml"
