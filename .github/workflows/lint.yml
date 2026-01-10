@@ -13,7 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Lint workflow files
-        uses: docker://ghcr.io/rhysd/actionlint/actionlint:v1
-        with:
-          args: ".github/workflows/*.yml .github/workflows/*.yaml"
+      - uses: rhysd/actionlint@v1.7.10
