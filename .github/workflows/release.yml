@@ -1,0 +1,50 @@
+name: Release
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # Runs at 00:00 UTC on the 1st of every month
+  workflow_dispatch:
+    inputs:
+      name:
+        required: true
+        type: string
+
+permissions:
+  contents: write  # required to push tags
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch tools
+        run: |
+          python scripts/fetch-tools.py tools.yml --verbose
+
+      - name: Check changes
+        id: check
+        run: |
+          echo "rebuild=$(python scripts/check-rebuild.py tools.yml)" >> $GITHUB_OUTPUT
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            echo "tag=$(python scripts/get-tag.py)" >> $GITHUB_OUTPUT
+          else
+            echo "tag=${{ github.event.inputs.name }}" >> $GITHUB_OUTPUT
+          fi
+
+      - uses: stefanzweifel/git-auto-commit-action@v7
+        if: ${{ steps.check.outputs.rebuild }}
+        with:
+          tag_name: ${{ steps.check.outputs.tag }}
+
+      - name: Write tag artifact
+        run: |
+          echo "${{ steps.check.outputs.tag }}" >> tag.txt
+
+      - name: Upload tag artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tag-name
+          path: tag.txt
