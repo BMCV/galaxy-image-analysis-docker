@@ -23,7 +23,7 @@ def list_tool_repositories(repo_url: str):
                 repo_owner = shed.get('owner')
                 if repo_name and repo_owner:
                     if repo_name.startswith('suite_'):
-                        suite_repo = ts.repositories.get_repository(repo_name, repo_owner)
+                        suite_repo = ts.repositories.get_repositories(repo_name, repo_owner)[0]
                         for repo in suite_repo.get("repository_dependencies", {}).values():
                             yield repo['name'], repo_owner
                     else:
