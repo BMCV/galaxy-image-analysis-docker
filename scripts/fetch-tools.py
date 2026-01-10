@@ -75,8 +75,8 @@ def build_tools_dict(repo_url: str, verbose: bool = False) -> dict:
             )
             if verbose:
                 print(
-                    f'{tools[-1]["tool_panel_section_label"]}:',
                     f'{tools[-1]["owner"]}/{tools[-1]["name"]}: {tools[-1]["revisions"]}',
+                    f'({tools[-1]["tool_panel_section_label"]})'
                 )
     if sections.unused:
         print(
