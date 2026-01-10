@@ -35,9 +35,9 @@ jobs:
         id: check
         run: |
           if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
-            echo "tag=$(cat tag.txt)" >> $GITHUB_OUTPUT
+            echo "tag=$(cat tag.txt)" >> "$GITHUB_OUTPUT"
           else
-            echo "tag=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+            echo "tag=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Set up Docker Buildx

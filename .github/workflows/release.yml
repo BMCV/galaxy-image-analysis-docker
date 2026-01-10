@@ -31,11 +31,11 @@ jobs:
       - name: Check changes
         id: check
         run: |
-          echo "rebuild=$(python scripts/check-rebuild.py tools.yml)" >> $GITHUB_OUTPUT
+          echo "rebuild=$(python scripts/check-rebuild.py tools.yml)" >> "$GITHUB_OUTPUT"
           if [[ "${{ github.event_name }}" == "schedule" ]]; then
-            echo "tag=$(python scripts/get-tag.py)" >> $GITHUB_OUTPUT
+            echo "tag=$(python scripts/get-tag.py)" >> "$GITHUB_OUTPUT"
           else
-            echo "tag=${{ github.event.inputs.name }}" >> $GITHUB_OUTPUT
+            echo "tag=${{ github.event.inputs.name }}" >> "$GITHUB_OUTPUT"
           fi
 
       - uses: stefanzweifel/git-auto-commit-action@v7
