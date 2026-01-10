@@ -11,7 +11,7 @@ env:
   image_name: kostrykin/galaxy-image-analysis
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,11 +29,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: tag-name
+          path: .
           run-id: ${{ github.event.workflow_run.id }}
 
       - name: Get tag name
         id: check
         run: |
+          set -e
           if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
             echo "tag=$(cat tag.txt)" >> "$GITHUB_OUTPUT"
           else
