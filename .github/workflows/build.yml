@@ -35,8 +35,11 @@ jobs:
       - name: Get tag name
         id: check
         run: |
-          set -e
           if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
+            if [[ ! -f tag.txt ]]; then
+              ls -al
+              exit 1
+            fi
             echo "tag=$(cat tag.txt)" >> "$GITHUB_OUTPUT"
           else
             echo "tag=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
