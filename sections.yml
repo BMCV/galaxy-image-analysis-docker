@@ -33,7 +33,7 @@ sections:
   - split_image
   - imagecoordinates_flipaxis
 
-- name: Image Segmentation, Partitioning, and Object Detection
+- name: Segmentation / Object Detection
   tools:
   - voronoi_tesselation
   - count_objects
