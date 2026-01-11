@@ -38,7 +38,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - run: echo "tools:" > tools.yml
+      - run: sed 's|^RUN\s*install-tools.*||' Dockerfile
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
