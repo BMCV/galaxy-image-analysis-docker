@@ -12,7 +12,9 @@ docker build -t galaxy-image-analysis .
 
 Running the container:
 ```bash
- docker run --rm --privileged \
-    -p 8080:80 -p 8021:21 -p 8022:22 \
-    galaxy-image-analysis
+ docker run --rm --privileged -p 8080:80 -p 8021:21 -p 8022:22 \
+    kostrykin/galaxy-image-analysis:latest
  ```
+or just `galaxy-image-analysis` for the locally build image.
+
+Also see the [instructions for the Galaxy base image](https://github.com/bgruening/docker-galaxy?tab=readme-ov-file#table-of-contents-). 
