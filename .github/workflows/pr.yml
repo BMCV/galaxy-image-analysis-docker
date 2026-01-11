@@ -30,3 +30,21 @@ jobs:
       - name: Test scripts/get-tag.py
         run: |
           python scripts/get-tag.py
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - run: echo "tools:" > tools.yml
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
