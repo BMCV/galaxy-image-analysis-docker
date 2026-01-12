@@ -79,3 +79,4 @@ sections:
   - iuc/sqlite_to_tabular
   - iuc/query_tabular
   - iuc/filter_tabular
+  - iuc/table_compute
