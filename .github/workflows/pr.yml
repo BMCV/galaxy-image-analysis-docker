@@ -18,7 +18,7 @@ jobs:
 
       - name: Fetch tools
         run: |
-          python scripts/fetch-tools.py tools.yml --verbose 2> >(tee stderr.txt >&2)
+          python scripts/fetch-tools.py tools.yml --extra_tools_file extra_tools.yml --verbose 2> >(tee stderr.txt >&2)
           if [ -s "stderr.txt" ]; then
             exit 1
           fi

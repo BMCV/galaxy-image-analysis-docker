@@ -1,4 +1,5 @@
 import argparse
+import itertools
 import pathlib
 import re
 import sys
@@ -90,10 +91,28 @@ class SectionIndex:
         return list(sorted(frozenset(self._data.keys()) - self._used))
 
 
-def build_tools_dict(repo_url: str, verbose: bool = False) -> dict:
+def list_extra_tool_repositories(extra_tools_filepath: str):
+    with open(extra_tools_filepath, 'r') as fp:
+        extras = yaml.safe_load(fp)
+    for repo in extras['tools']:
+        repo_owner, repo_name = repo.split('/')
+        if repo_name and repo_owner:
+            if repo_name.startswith('suite_'):
+                yield from list_tool_suite_dependencies(
+                    repo_name,
+                    repo_owner,
+                )
+            else:
+                yield repo_name, repo_owner
+
+
+def build_tools_dict(repo_url: str, extra_tools_filepath: str | None = None, verbose: bool = False) -> dict:
     tools = list()
     sections = SectionIndex()
-    for repo_name, repo_owner in list_tool_repositories(repo_url):
+    for repo_name, repo_owner in itertools.chain(
+        list_tool_repositories(repo_url),
+        list_extra_tool_repositories(extra_tools_filepath) if extra_tools_filepath else [],
+    ):
         tool_revisions = list_revisions(repo_name, repo_owner)
         if len(tool_revisions) > 0:
             tools.append(
@@ -133,9 +152,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--repo-url', type=str, default=default_repo_url)
     parser.add_argument('tools_file', type=str)
+    parser.add_argument('--extra_tools_file', type=str)
     parser.add_argument('--verbose', action='store_true', default=False)
     args = parser.parse_args()
 
-    tools_dict = build_tools_dict(args.repo_url, verbose=args.verbose)
+    tools_dict = build_tools_dict(args.repo_url, args.extra_tools_file, verbose=args.verbose)
     with open(args.tools_file, 'w') as fp:
         yaml.dump(tools_dict, fp)
