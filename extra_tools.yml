@@ -2,4 +2,5 @@ tools:
   - bgruening/add_line_to_file
   - bgruening/text_processing
   - iuc/suite_query_tabular
+  - iuc/table_compute
   - devteam/column_maker
