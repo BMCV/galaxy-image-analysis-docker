@@ -4,3 +4,4 @@ tools:
   - iuc/suite_query_tabular
   - iuc/table_compute
   - devteam/column_maker
+  - devteam/tables_arithmetic_operations

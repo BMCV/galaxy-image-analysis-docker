@@ -76,6 +76,7 @@ sections:
   - bgruening/add_line_to_file
   - bgruening/text_processing
   - devteam/column_maker
+  - devteam/tables_arithmetic_operations
   - iuc/sqlite_to_tabular
   - iuc/query_tabular
   - iuc/filter_tabular
