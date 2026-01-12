@@ -106,12 +106,20 @@ def list_extra_tool_repositories(extra_tools_filepath: str):
                 yield repo_name, repo_owner
 
 
-def build_tools_dict(repo_url: str, extra_tools_filepath: str | None = None, verbose: bool = False) -> dict:
+def build_tools_dict(
+    repo_url: str,
+    extra_tools_filepath: str | None = None,
+    verbose: bool = False,
+) -> dict:
+
     tools = list()
     sections = SectionIndex()
     for repo_name, repo_owner in itertools.chain(
         list_tool_repositories(repo_url),
-        list_extra_tool_repositories(extra_tools_filepath) if extra_tools_filepath else [],
+        (
+            list_extra_tool_repositories(extra_tools_filepath)
+            if extra_tools_filepath else []
+        ),
     ):
         tool_revisions = list_revisions(repo_name, repo_owner)
         if len(tool_revisions) > 0:
@@ -120,7 +128,9 @@ def build_tools_dict(repo_url: str, extra_tools_filepath: str | None = None, ver
                     name=repo_name,
                     owner=repo_owner,
                     revisions=[tool_revisions[-1]],
-                    tool_panel_section_label=sections[f'{repo_owner}/{repo_name}'],
+                    tool_panel_section_label=sections[
+                        f'{repo_owner}/{repo_name}'
+                    ],
                 ),
             )
             if verbose:
@@ -156,7 +166,11 @@ if __name__ == '__main__':
     parser.add_argument('--verbose', action='store_true', default=False)
     args = parser.parse_args()
 
-    tools_dict = build_tools_dict(args.repo_url, args.extra_tools_file, verbose=args.verbose)
+    tools_dict = build_tools_dict(
+        args.repo_url,
+        args.extra_tools_file,
+        verbose=args.verbose,
+    )
     with open(args.tools_file, 'w') as fp:
         fp.write(
             '\n'.join(
