@@ -2,71 +2,80 @@ sections:
 
 - name: Image Processing
   tools:
-  - anisotropic_diffusion
-  - morphological_operations
-  - ridge_filter
-  - 2d_simple_filter
-  - clip_image
-  - crop_image
-  - 2d_histogram_equalization
-  - image_math
-  - background_removal
-  - scale_image
+  - imgteam/anisotropic_diffusion
+  - imgteam/morphological_operations
+  - imgteam/ridge_filter
+  - imgteam/2d_simple_filter
+  - imgteam/clip_image
+  - imgteam/crop_image
+  - imgteam/2d_histogram_equalization
+  - imgteam/image_math
+  - imgteam/background_removal
+  - imgteam/scale_image
 
 - name: Image Conversion
   tools:
-  - concat_channels
-  - binary2labelimage
-  - binaryimage2points
-  - coordinates_of_roi
-  - points2labelimage
-  - highdicom_dicom2tiff
-  - highdicom_dicom2text
-  - bfconvert
-  - label_to_binary
-  - labelimage2points
-  - repeat_channels
-  - bioformats2raw
-  - color_deconvolution
-  - permutate_axis
-  - slice_image
-  - split_image
-  - imagecoordinates_flipaxis
+  - imgteam/concat_channels
+  - imgteam/binary2labelimage
+  - imgteam/binaryimage2points
+  - imgteam/coordinates_of_roi
+  - imgteam/points2labelimage
+  - imgteam/highdicom_dicom2tiff
+  - imgteam/highdicom_dicom2text
+  - imgteam/bfconvert
+  - imgteam/label_to_binary
+  - imgteam/labelimage2points
+  - imgteam/repeat_channels
+  - imgteam/bioformats2raw
+  - imgteam/color_deconvolution
+  - imgteam/permutate_axis
+  - imgteam/slice_image
+  - imgteam/split_image
+  - imgteam/imagecoordinates_flipaxis
 
 - name: Segmentation / Object Detection
   tools:
-  - voronoi_tesselation
-  - count_objects
-  - 2d_feature_extraction
-  - 2d_filter_segmentation_by_features
-  - mergeneighboursinlabelimage
-  - spot_detection_2d
-  - plantseg
-  - rfove
-  - superdsm
-  - split_labelmap
-  - 2d_auto_threshold
+  - imgteam/voronoi_tesselation
+  - imgteam/count_objects
+  - imgteam/2d_feature_extraction
+  - imgteam/2d_filter_segmentation_by_features
+  - imgteam/mergeneighboursinlabelimage
+  - imgteam/spot_detection_2d
+  - imgteam/plantseg
+  - imgteam/rfove
+  - imgteam/superdsm
+  - imgteam/split_labelmap
+  - imgteam/2d_auto_threshold
 
 - name: Image Registration
   tools:
-  - orientationpy
-  - image_registration_affine
-  - landmark_registration
-  - projective_transformation_points
-  - projective_transformation
+  - imgteam/orientationpy
+  - imgteam/image_registration_affine
+  - imgteam/landmark_registration
+  - imgteam/projective_transformation_points
+  - imgteam/projective_transformation
 
 - name: Object Tracking
   tools:
-  - points_association_nn
+  - imgteam/points_association_nn
 
 - name: Visualization and Validation
   tools:
-  - colorize_labels
-  - segmetrics
-  - visceral_evaluatesegmentation
-  - overlay_images
-  - libcarna_render
-  - detection_viz
-  - iscc_sum_similarity
-  - iscc_sum_verify
-  - iscc_sum
+  - imgteam/colorize_labels
+  - imgteam/segmetrics
+  - imgteam/visceral_evaluatesegmentation
+  - imgteam/overlay_images
+  - imgteam/libcarna_render
+  - imgteam/detection_viz
+  - imgteam/iscc_sum_similarity
+  - imgteam/iscc_sum_verify
+  - imgteam/iscc_sum
+
+- name: Text Manipulation
+  tools:
+  - bgruening/add_line_to_file
+  - bgruening/text_processing
+  - devteam/column_maker
+  - iuc/sqlite_to_tabular
+  - iuc/query_tabular
+  - iuc/filter_tabular
