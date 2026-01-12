@@ -3,5 +3,6 @@ tools:
   - bgruening/text_processing
   - iuc/suite_query_tabular
   - iuc/table_compute
+  - iuc/compose_text_param
   - devteam/column_maker
   - devteam/tables_arithmetic_operations

@@ -81,3 +81,7 @@ sections:
   - iuc/query_tabular
   - iuc/filter_tabular
   - iuc/table_compute
+
+- name: Expression Tools
+  tools:
+  - iuc/compose_text_param
