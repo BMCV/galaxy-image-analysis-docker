@@ -25,7 +25,7 @@ tools:
 - name: 2d_histogram_equalization
   owner: imgteam
   revisions:
-  - b1c2c210813c
+  - 99e0ef91ea5e
   tool_panel_section_label: Image Processing
 - name: 2d_simple_filter
   owner: imgteam
@@ -50,7 +50,7 @@ tools:
 - name: bfconvert
   owner: imgteam
   revisions:
-  - fcadded98e61
+  - fa8ce46a95bb
   tool_panel_section_label: Image Conversion
 - name: binary2labelimage
   owner: imgteam
@@ -115,7 +115,7 @@ tools:
 - name: curve_fitting
   owner: imgteam
   revisions:
-  - 2dc244356765
+  - 91dfd38a97ae
   tool_panel_section_label: Miscellaneous
 - name: detection_viz
   owner: imgteam
@@ -235,7 +235,7 @@ tools:
 - name: points_association_nn
   owner: imgteam
   revisions:
-  - f3fad67af22c
+  - 7b93ce5ec3ee
   tool_panel_section_label: Object Tracking
 - name: projective_transformation
   owner: imgteam
@@ -305,7 +305,7 @@ tools:
 - name: superdsm
   owner: imgteam
   revisions:
-  - 30d88f083ae9
+  - fc3724b4f841
   tool_panel_section_label: Segmentation / Object Detection
 - name: table_compute
   owner: iuc
@@ -325,7 +325,7 @@ tools:
 - name: unzip
   owner: imgteam
   revisions:
-  - 06eac2d1a8a9
+  - 0eec07359840
   tool_panel_section_label: Miscellaneous
 - name: visceral_evaluatesegmentation
   owner: imgteam
