@@ -80,12 +80,12 @@ tools:
 - name: colorize_labels
   owner: imgteam
   revisions:
-  - 5907be5a8d7c
+  - 465a08183136
   tool_panel_section_label: Visualization and Validation
 - name: column_maker
   owner: devteam
   revisions:
-  - aff5135563c6
+  - 61f9ddbc63ca
   tool_panel_section_label: Text Manipulation
 - name: compose_text_param
   owner: iuc
@@ -95,7 +95,7 @@ tools:
 - name: concat_channels
   owner: imgteam
   revisions:
-  - 999c5941a6f0
+  - 42f6ed8b1695
   tool_panel_section_label: Image Conversion
 - name: coordinates_of_roi
   owner: imgteam
@@ -115,7 +115,12 @@ tools:
 - name: curve_fitting
   owner: imgteam
   revisions:
-  - 91dfd38a97ae
+  - c297f2961ee5
+  tool_panel_section_label: Miscellaneous
+- name: cv2_extract_frames
+  owner: imgteam
+  revisions:
+  - b45c76394bb0
   tool_panel_section_label: Miscellaneous
 - name: detection_viz
   owner: imgteam
@@ -145,7 +150,7 @@ tools:
 - name: image_math
   owner: imgteam
   revisions:
-  - 48fa3ac55df2
+  - 8229f7f69d08
   tool_panel_section_label: Image Processing
 - name: image_registration_affine
   owner: imgteam
@@ -215,7 +220,7 @@ tools:
 - name: overlay_images
   owner: imgteam
   revisions:
-  - bc4cf90cfc3b
+  - aece93442819
   tool_panel_section_label: Visualization and Validation
 - name: permutate_axis
   owner: imgteam
@@ -235,7 +240,7 @@ tools:
 - name: points_association_nn
   owner: imgteam
   revisions:
-  - 7b93ce5ec3ee
+  - e7d22ed256f3
   tool_panel_section_label: Object Tracking
 - name: projective_transformation
   owner: imgteam
@@ -275,7 +280,7 @@ tools:
 - name: segmetrics
   owner: imgteam
   revisions:
-  - 4512751bccca
+  - dd4aa58e5362
   tool_panel_section_label: Visualization and Validation
 - name: slice_image
   owner: imgteam
@@ -295,7 +300,7 @@ tools:
 - name: spot_detection_2d
   owner: imgteam
   revisions:
-  - e8c9e104e109
+  - 1a03fcd4fa80
   tool_panel_section_label: Segmentation / Object Detection
 - name: sqlite_to_tabular
   owner: iuc
@@ -305,7 +310,7 @@ tools:
 - name: superdsm
   owner: imgteam
   revisions:
-  - fc3724b4f841
+  - f66dce543932
   tool_panel_section_label: Segmentation / Object Detection
 - name: table_compute
   owner: iuc
