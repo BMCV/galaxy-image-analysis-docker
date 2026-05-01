@@ -145,7 +145,7 @@ tools:
 - name: image_info
   owner: imgteam
   revisions:
-  - f8b4eada923c
+  - e28851b24032
   tool_panel_section_label: Miscellaneous
 - name: image_math
   owner: imgteam
@@ -222,6 +222,11 @@ tools:
   revisions:
   - aece93442819
   tool_panel_section_label: Visualization and Validation
+- name: parse_image_metadata
+  owner: imgteam
+  revisions:
+  - 96771bf8ed2f
+  tool_panel_section_label: Miscellaneous
 - name: permutate_axis
   owner: imgteam
   revisions:
@@ -290,7 +295,7 @@ tools:
 - name: split_image
   owner: imgteam
   revisions:
-  - 390943df8a35
+  - 7191fd16988f
   tool_panel_section_label: Image Conversion
 - name: split_labelmap
   owner: imgteam
@@ -330,7 +335,7 @@ tools:
 - name: unzip
   owner: imgteam
   revisions:
-  - 0eec07359840
+  - 6a7e010c05db
   tool_panel_section_label: Miscellaneous
 - name: visceral_evaluatesegmentation
   owner: imgteam
