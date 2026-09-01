@@ -85,7 +85,7 @@ tools:
 - name: column_maker
   owner: devteam
   revisions:
-  - 61f9ddbc63ca
+  - 9bc5cdefb090
   tool_panel_section_label: Text Manipulation
 - name: compose_text_param
   owner: iuc
@@ -130,7 +130,7 @@ tools:
 - name: filter_tabular
   owner: iuc
   revisions:
-  - 90f657745fea
+  - 26fc6cf774d4
   tool_panel_section_label: Text Manipulation
 - name: highdicom_dicom2text
   owner: imgteam
@@ -257,6 +257,31 @@ tools:
   revisions:
   - 499ad4d9aa13
   tool_panel_section_label: Image Registration
+- name: pycytominer_aggregate
+  owner: imgteam
+  revisions:
+  - 4c98cf453fd1
+  tool_panel_section_label: Miscellaneous
+- name: pycytominer_annotate
+  owner: imgteam
+  revisions:
+  - 2403cfc019eb
+  tool_panel_section_label: Miscellaneous
+- name: pycytominer_consensus
+  owner: imgteam
+  revisions:
+  - 139977ffa202
+  tool_panel_section_label: Miscellaneous
+- name: pycytominer_feature_select
+  owner: imgteam
+  revisions:
+  - a2c40ccbfe6c
+  tool_panel_section_label: Miscellaneous
+- name: pycytominer_normalize
+  owner: imgteam
+  revisions:
+  - f42a3b502790
+  tool_panel_section_label: Miscellaneous
 - name: query_tabular
   owner: iuc
   revisions:
@@ -320,7 +345,7 @@ tools:
 - name: table_compute
   owner: iuc
   revisions:
-  - cd36d6e45e29
+  - c656214aa052
   tool_panel_section_label: Text Manipulation
 - name: tables_arithmetic_operations
   owner: devteam
@@ -330,7 +355,7 @@ tools:
 - name: text_processing
   owner: bgruening
   revisions:
-  - ab83aa685821
+  - 30b60202d990
   tool_panel_section_label: Text Manipulation
 - name: unzip
   owner: imgteam
