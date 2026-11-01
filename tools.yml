@@ -90,7 +90,7 @@ tools:
 - name: column_maker
   owner: devteam
   revisions:
-  - 9bc5cdefb090
+  - b6236eb1a50b
   tool_panel_section_label: Text Manipulation
 - name: compose_text_param
   owner: iuc
@@ -140,12 +140,12 @@ tools:
 - name: highdicom_dicom2text
   owner: imgteam
   revisions:
-  - 6d62f6950f66
+  - 910718d4ce13
   tool_panel_section_label: Image Conversion
 - name: highdicom_dicom2tiff
   owner: imgteam
   revisions:
-  - d91c748f7114
+  - 8f9b3df1c62d
   tool_panel_section_label: Image Conversion
 - name: image_info
   owner: imgteam
@@ -290,7 +290,7 @@ tools:
 - name: query_tabular
   owner: iuc
   revisions:
-  - cf4397560712
+  - a8e9456dbead
   tool_panel_section_label: Text Manipulation
 - name: repeat_channels
   owner: imgteam
@@ -350,7 +350,7 @@ tools:
 - name: table_compute
   owner: iuc
   revisions:
-  - c656214aa052
+  - 6fb9abd4a64a
   tool_panel_section_label: Text Manipulation
 - name: tables_arithmetic_operations
   owner: devteam
